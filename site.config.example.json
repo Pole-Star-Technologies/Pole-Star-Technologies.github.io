@@ -1,0 +1,36 @@
+{
+  "$comment": "Copy to site.config.json and fill every value. `node build.mjs` refuses to write anything while a value is still TODO or a token is unresolved.",
+
+  "org": {
+    "name": "TODO - legal or trading name of the developer/entity that publishes the app",
+    "role": "data controller",
+    "supportEmail": "TODO - a mailbox someone actually reads, e.g. dhruvyadav.gga@gmail.com",
+    "privacyEmail": "TODO - can be the same mailbox as supportEmail",
+    "postalAddress": "TODO - optional, but required by some regulators (GDPR Art. 13 requires an identity and address of the controller)",
+    "jurisdiction": "TODO - the law the terms of service are governed by, e.g. India"
+  },
+
+  "app": {
+    "name": "MeetingAI",
+    "package": "com.meetingAIv1",
+    "playUrl": "https://play.google.com/store/apps/details?id=com.meetingAIv1",
+    "versionName": "1.3.0",
+    "versionCode": "14",
+    "platform": "Android (min 8.0 / API 26, target Android 16 / API 36)"
+  },
+
+  "site": {
+    "base": "TODO - the URL this site will be served from, no trailing slash, e.g. https://<your-github-user>.github.io/meetingai-site",
+    "updated": "2026-10-04",
+    "policyPath": "/privacy.html",
+    "supportPath": "/support.html",
+    "termsPath": "/terms.html"
+  },
+
+  "backend": {
+    "host": "Supabase",
+    "projectName": "meting-assistant",
+    "projectRef": "gjmnkzzwacnqiwrslzqb",
+    "region": "ap-northeast-2 (Seoul, South Korea)"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "meetingai-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Public site for MeetingAI (Pole Star Technologies): privacy policy, terms, support. Built by build.mjs into dist/, deployed to GitHub Pages.",
+  "type": "module",
+  "scripts": {
+    "check": "node build.mjs --check",
+    "build": "node build.mjs",
+    "serve": "node build.mjs && npx --yes serve dist"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

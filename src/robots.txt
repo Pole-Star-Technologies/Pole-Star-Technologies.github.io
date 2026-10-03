@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# The 404 page adds nothing and duplicates every typo'd link.
+Disallow: /404.html
+
+Sitemap: {{site.base}}/sitemap.xml

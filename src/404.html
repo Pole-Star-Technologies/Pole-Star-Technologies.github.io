@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — {{app.name}}</title>
+<meta name="robots" content="noindex,follow">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="favicon.png">
+</head>
+<body data-app-version="{{app.versionName}}+{{app.versionCode}}">
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">{{app.name}}<span class="dot">.</span></a>
+    <nav class="site">
+      <a href="index.html">Home</a>
+      <a href="{{site.policyPath}}">Privacy</a>
+      <a href="{{site.termsPath}}">Terms</a>
+      <a href="{{site.supportPath}}">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<h1>That page is not here</h1>
+<p class="lede">A 404. If a link from the Play Store or from inside the app brought you here, the link is wrong and we want to know about it.</p>
+
+<p>The pages that exist:</p>
+<ul>
+  <li><a href="index.html">Home — what {{app.name}} does</a></li>
+  <li><a href="{{site.policyPath}}">Privacy Policy</a> — what is collected, where it goes, how to delete it</li>
+  <li><a href="{{site.termsPath}}">Terms of Service</a></li>
+  <li><a href="{{site.supportPath}}">Support</a> — <a href="mailto:{{org.supportEmail}}">{{org.supportEmail}}</a></li>
+</ul>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>{{org.name}} — {{org.postalAddress}}</span>
+    <a href="{{site.policyPath}}">Privacy</a>
+    <a href="{{site.termsPath}}">Terms</a>
+    <a href="{{site.supportPath}}">Support</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — {{app.name}} | {{org.name}}</title>
+<meta name="description" content="How to get help with {{app.name}}, what information to include, how to report a problem with recording, transcription, playback, subscriptions or your data.">
+<link rel="canonical" href="{{site.base}}{{site.supportPath}}">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="favicon.png">
+<meta name="robots" content="index,follow">
+</head>
+<body data-app-version="{{app.versionName}}+{{app.versionCode}}">
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">{{app.name}}<span class="dot">.</span></a>
+    <nav class="site">
+      <a href="index.html">Home</a>
+      <a href="{{site.policyPath}}">Privacy</a>
+      <a href="{{site.termsPath}}">Terms</a>
+      <a href="{{site.supportPath}}" aria-current="page">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<h1>Support</h1>
+<p class="lede">Email is the only support channel, and it is read by the people who build the app.</p>
+<p class="meta">
+  <span><a href="mailto:{{org.supportEmail}}">{{org.supportEmail}}</a></span>
+  <span>App version {{app.versionName}} (build {{app.versionCode}})</span>
+  <span>{{org.name}}</span>
+</p>
+
+<h2 id="how">How to reach us</h2>
+<p>Write to <a href="mailto:{{org.supportEmail}}">{{org.supportEmail}}</a> from the email address you sign in with. Replies within 2 business days; privacy and data-deletion requests are answered sooner and can also go to <a href="mailto:{{org.privacyEmail}}">{{org.privacyEmail}}</a>.</p>
+
+<h2 id="include">What to include</h2>
+<ul>
+  <li><strong>App version</strong> — Profile screen in the app (e.g. {{app.versionName}}).</li>
+  <li><strong>Phone and Android version</strong> — e.g. “Xiaomi, Android 16”.</li>
+  <li><strong>What you did, what happened, how often</strong> — “started a 40-minute meeting, playback stopped at 12 minutes, happens every time”.</li>
+  <li><strong>Which transcription mode</strong> — offline or cloud, and which model if you chose one.</li>
+  <li><strong>A screenshot</strong> of any error text.</li>
+  <li><strong>Time of day and rough meeting title</strong>, when a server-side problem is suspected — it lets us find the request without reading your content.</li>
+</ul>
+<p>Please do not send full transcripts of meetings that contain other people’s personal data unless they are needed to reproduce a bug. A few lines is enough.</p>
+
+<h2 id="common">Before you write</h2>
+<table>
+  <thead><tr><th>Symptom</th><th>Check first</th></tr></thead>
+  <tbody>
+    <tr><th>Recording stops or is cut short</th><td>Android battery optimisation for {{app.name}} is off; the recording notification is present while recording; enough free storage on the phone.</td></tr>
+    <tr><th>Sign-in fails (code 10 / <code>ApiException</code>)</td><td>Update the app from Google Play, then restart the phone. If it persists, tell us the exact message — it usually means the certificate Google checks has changed.</td></tr>
+    <tr><th>Transcription is slow or fails</th><td>Cloud mode needs a stable upload; large meetings upload in parts. Try a shorter part, or switch that meeting to offline transcription.</td></tr>
+    <tr><th>A meeting is missing on another device</th><td>Recordings live on the phone that made them. Cloud-transcribed meetings and their minutes sync; the audio file itself may not.</td></tr>
+    <tr><th>Premium not applied after purchase</th><td>Wait a minute in the app, then restart it. Still nothing: send us the order number from Google Play → Payments &amp; subscriptions.</td></tr>
+    <tr><th>Want your data gone</th><td>Profile → Delete account in the app. It removes recordings, transcripts, minutes and the account. No email needed.</td></tr>
+  </tbody>
+</table>
+
+<h2 id="app-access">For app reviewers</h2>
+<p>{{app.name}} requires a Google sign-in and has no anonymous or demo mode. If you need an account to review the app, contact <a href="mailto:{{org.supportEmail}}">{{org.supportEmail}}</a> and we will provide access details, typically within 24 hours. Your reviewers’ account data is treated exactly as described in the <a href="{{site.policyPath}}">Privacy Policy</a>, and is deleted on request.</p>
+
+<h2 id="escalate">Reporting something serious</h2>
+<p>For a security issue, a suspected data exposure, or a request from someone recorded in another person’s meeting, use <a href="mailto:{{org.privacyEmail}}">{{org.privacyEmail}}</a> with the word “security” or “data request” in the subject line. We acknowledge these the same business day where we can.</p>
+
+<h2 id="notsupported">What we do not do</h2>
+<p>No phone support, no remote access to your device, and no support by messaging app. We will never ask for your password, a payment PIN, or a full backup of your meetings.</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>{{org.name}} — {{org.postalAddress}}</span>
+    <a href="mailto:{{org.supportEmail}}">{{org.supportEmail}}</a>
+    <a href="{{site.policyPath}}">Privacy</a>
+    <a href="{{site.termsPath}}">Terms</a>
+    <a href="{{app.playUrl}}">Google Play</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Service — {{app.name}} | {{org.name}}</title>
+<meta name="description" content="The terms on which {{org.name}} provides {{app.name}}: eligibility, lawful recording, subscriptions through Google Play, acceptable use, disclaimers and liability.">
+<link rel="canonical" href="{{site.base}}{{site.termsPath}}">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="favicon.png">
+<meta name="robots" content="index,follow">
+</head>
+<body data-app-version="{{app.versionName}}+{{app.versionCode}}">
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">{{app.name}}<span class="dot">.</span></a>
+    <nav class="site">
+      <a href="index.html">Home</a>
+      <a href="{{site.policyPath}}">Privacy</a>
+      <a href="{{site.termsPath}}" aria-current="page">Terms</a>
+      <a href="{{site.supportPath}}">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<h1>Terms of Service</h1>
+<p class="lede">Short, because a document nobody reads is not a real agreement. These are the terms under which {{org.name}} provides {{app.name}}.</p>
+<p class="meta">
+  <span>Last updated: <strong>{{site.updated}}</strong></span>
+  <span>Version 1.0</span>
+  <span>Governed by the law of {{org.jurisdiction}}</span>
+</p>
+
+<h2 id="agree">1. Agreement</h2>
+<p>By installing or using {{app.name}} you agree to these terms and to the <a href="{{site.policyPath}}">Privacy Policy</a>. If you do not agree, do not use the app and delete your account.</p>
+
+<h2 id="eligibility">2. Who may use it</h2>
+<p>You must be at least <strong>{{app.minimumAge}} years old</strong> and legally able to enter into a contract. The app is a business tool for adults and is not directed at anyone younger. If you are using it on behalf of an organisation, that organisation is bound by these terms and you confirm you may bind it.</p>
+
+<h2 id="lawful">3. Lawful recording is yours, not ours</h2>
+<p>You are solely responsible for having the right to record a conversation and to process what is said in it. Before recording you must inform the other participants and obtain whatever consent your jurisdiction, your employer or your counterparty’s rules require. You must not use {{app.name}} to:</p>
+<ul>
+  <li>record conversations you are not a genuine participant in;</li>
+  <li>record where recording is prohibited, or in breach of a duty of confidence;</li>
+  <li>process personal data of other people beyond what the recorded purpose requires;</li>
+  <li>instruct the app in a way that is unlawful, defamatory, harassing or fraudulent.</li>
+</ul>
+<p>If we receive a credible complaint that you have used the app this way, we may suspend or terminate your access and delete the related data, and we will cooperate with lawful investigations.</p>
+
+<h2 id="licence">4. Your licence, and your content</h2>
+<p>We grant you a personal, non-exclusive, non-transferable licence to use the app while you comply with these terms. <strong>Your recordings, transcripts and generated minutes belong to you</strong> (to the extent anyone can own speech and its transcription). We take no assignment of your content, we do not use it to train models, and we do not license it to anyone else. You get no rights in our software, and reverse engineering it is not permitted except where the law forbids that restriction.</p>
+
+<h2 id="subscriptions">5. Subscriptions</h2>
+<p>Paid plans are subscriptions sold through <strong>Google Play</strong>: billed to your Play account, renewing automatically until cancelled, cancellable at any time in Google Play (Play Store → Subscriptions). Prices shown in the app are set by us; Google applies taxes where required and handles refunds under Google Play’s own refund policy.</p>
+<ul>
+  <li>Cancelling stops future billing. Your paid access continues until the end of the current period, then drops to the free tier.</li>
+  <li>Plan limits (meetings and audio minutes per period, devices, transcription modes) may change; if a change reduces what you get, we will state it in the app before your renewal.</li>
+  <li>Deleting your account does not cancel a Play subscription. Cancel it in Play, then delete the account.</li>
+  <li>Where Google Play’s own terms — payments, refunds, dispute handling — cover something, Google Play’s terms govern that transaction.</li>
+</ul>
+
+<h2 id="service">6. How the service is provided</h2>
+<p>We aim to keep the app available and we do not promise a numeric uptime figure — this is a one-person-scale operation, and a number we do not back with credits would be decoration. Cloud transcription depends on Google’s Gemini API and Supabase, which we do not control. If a cloud feature is unavailable, the offline transcription path in the app generally still works.</p>
+<p>Features change between versions. We may add, change or remove features; if we remove one you are paying for, we will say so in the app.</p>
+
+<h2 id="ai">7. AI output may be wrong</h2>
+<p>Transcripts, summaries, key points, action items, participant lists and sentiment are produced by a machine, from audio that may be imperfect. <strong>They are drafts, not records of fact.</strong> Do not rely on them as a substitute for your own notes, for legal or financial decisions, or for what was actually agreed — check anything consequential against the recording.</p>
+
+<h2 id="disclaimers">8. No warranties</h2>
+<p>The app is provided “as is”, without warranty of any kind, to the maximum extent the law allows — including fitness for a purpose, uninterrupted operation, accuracy of transcription, and that your data will be preserved. You are responsible for keeping copies of anything you cannot afford to lose; the app can share or export a meeting.</p>
+
+<h2 id="liability">9. Limits of liability</h2>
+<p>We are liable only for what we are legally required to cover. Subject to that, we are not liable for loss of profit, loss of business, loss or corruption of data, or indirect and consequential loss arising from your use of the app. Our total liability for anything arising out of these terms is capped at the greater of the amount you paid us for the app in the 12 months before the claim, or the equivalent in your local currency of that amount. Nothing here limits liability for fraud, death or personal injury, or any other liability that cannot be limited under {{org.jurisdiction}} law.</p>
+
+<h2 id="termination">10. Ending the agreement</h2>
+<p>You can stop at any time: uninstall, and delete your account in the app (Profile → Delete account) to have your data removed as described in the Privacy Policy. We may suspend or end access if you breach these terms; on termination of a paying account without cause, we will refund the unused period via Google Play.</p>
+
+<h2 id="changes">11. Changes to these terms</h2>
+<p>We may update these terms. The current version, with its date, lives at <code>{{site.base}}{{site.termsPath}}</code>. Material changes will be announced in the app before they apply. Using the app afterwards means you accept the updated terms; if you do not, delete your account.</p>
+
+<h2 id="law">12. Governing law</h2>
+<p>These terms are governed by the laws of <strong>{{org.jurisdiction}}</strong>, and the courts there have jurisdiction, without affecting mandatory consumer rights in your country of residence. If anything here is unenforceable, the rest stands.</p>
+
+<h2 id="contact">13. Contact</h2>
+<p>{{org.name}}, {{org.postalAddress}}. Support: <a href="mailto:{{org.supportEmail}}">{{org.supportEmail}}</a>. Privacy: <a href="mailto:{{org.privacyEmail}}">{{org.privacyEmail}}</a>.</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>{{org.name}} — {{org.postalAddress}}</span>
+    <a href="mailto:{{org.supportEmail}}">{{org.supportEmail}}</a>
+    <a href="{{site.policyPath}}">Privacy</a>
+    <a href="{{site.termsPath}}">Terms</a>
+    <a href="{{app.playUrl}}">Google Play</a>
+  </div>
+</footer>
+</body>
+</html>

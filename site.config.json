@@ -1,0 +1,34 @@
+{
+  "org": {
+    "name": "Pole Star Technologies",
+    "supportEmail": "si.tech.polestar@gmail.com",
+    "privacyEmail": "si.tech.polestar@gmail.com",
+    "postalAddress": "New Town, AA3, Kolkata, India",
+    "jurisdiction": "India"
+  },
+
+  "app": {
+    "name": "MeetingAI",
+    "package": "com.meetingAIv1",
+    "playUrl": "https://play.google.com/store/apps/details?id=com.meetingAIv1",
+    "versionName": "1.3.0",
+    "versionCode": "14",
+    "platform": "Android 8.0 or newer (API 26, target API 36)",
+    "minimumAge": "21"
+  },
+
+  "site": {
+    "base": "TODO - the URL this site is served from, no trailing slash, e.g. https://polestar-tech.github.io/meetingai-site",
+    "updated": "2026-10-04",
+    "policyPath": "/privacy.html",
+    "supportPath": "/support.html",
+    "termsPath": "/terms.html"
+  },
+
+  "backend": {
+    "host": "Supabase",
+    "projectName": "meting-assistant",
+    "projectRef": "gjmnkzzwacnqiwrslzqb",
+    "region": "ap-northeast-2 (Seoul, South Korea)"
+  }
+}

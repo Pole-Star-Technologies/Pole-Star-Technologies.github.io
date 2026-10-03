@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{app.name}} — AI meeting assistant for Android | {{org.name}}</title>
+<meta name="description" content="{{app.name}} records meetings on Android, transcribes them on your device or in the cloud, and turns them into minutes, key points and action items.">
+<link rel="canonical" href="{{site.base}}/">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="favicon.png">
+<meta name="robots" content="index,follow">
+</head>
+<body data-app-version="{{app.versionName}}+{{app.versionCode}}">
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">{{app.name}}<span class="dot">.</span></a>
+    <nav class="site">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="{{site.policyPath}}">Privacy</a>
+      <a href="{{site.termsPath}}">Terms</a>
+      <a href="{{site.supportPath}}">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<h1>{{app.name}}</h1>
+<p class="lede">Record a meeting on your Android phone. Get back a transcript, a summary, the key points and the action items — with the option to do the whole thing on the phone itself, without uploading the audio.</p>
+<p class="meta">
+  <span>{{app.platform}}</span>
+  <span>Current version {{app.versionName}} (build {{app.versionCode}})</span>
+  <span>By {{org.name}}</span>
+</p>
+
+<p>
+  <a href="{{app.playUrl}}"><strong>Get it on Google Play →</strong></a>
+</p>
+
+<h2 id="what">What it does</h2>
+<div class="grid">
+  <div class="card">
+    <h3>Record</h3>
+    <p>One tap starts a recording; the mic indicator stays on your phone the whole time. Long meetings survive the screen turning off, and a paired headset or car kit can be the input.</p>
+  </div>
+  <div class="card">
+    <h3>Transcribe</h3>
+    <p>Two modes: <strong>offline</strong>, where a Whisper model runs on your phone and your audio is not uploaded, or <strong>cloud</strong>, where audio goes through our service to Google’s Gemini API for the hard parts.</p>
+  </div>
+  <div class="card">
+    <h3>Minutes</h3>
+    <p>A summary, the key points, action items, who spoke and an overall read of the meeting — written from the transcript, editable afterwards.</p>
+  </div>
+  <div class="card">
+    <h3>Library</h3>
+    <p>Playback, search, share, and per-meeting history with duration and size. Delete a meeting when you are done with it.</p>
+  </div>
+</div>
+
+<h2 id="plans">Plans</h2>
+<p>{{app.name}} has a free tier and subscription tiers billed through Google Play (monthly or annual). What each tier allows is shown in the app; renewals, cancellations and refunds are handled by Google Play. Nothing about a subscription changes what happens to your recordings: they are yours and one action deletes them.</p>
+
+<h2 id="privacy">Privacy, stated plainly</h2>
+<ul>
+  <li>No advertising SDKs, no analytics SDKs, no third-party trackers in the app.</li>
+  <li>Offline transcription means audio that never leaves your phone.</li>
+  <li>Storage is private and row-scoped: your meetings are reachable only by your account.</li>
+  <li>Location is optional, used for a sign-in security record only, never while recording.</li>
+  <li>Profile → Delete account removes your recordings, transcripts, minutes and account, in an order the server enforces so nothing is orphaned.</li>
+</ul>
+<p>The full detail — every category of data, every permission and what each is for, who processes what, retention, and your rights — is in the <a href="{{site.policyPath}}">Privacy Policy</a>. It is written against the build that ships, not against a template.</p>
+
+<h2 id="who">Who makes it</h2>
+<p>{{app.name}} is developed and operated by <strong>{{org.name}}</strong>, {{org.postalAddress}}. For anything else: <a href="mailto:{{org.supportEmail}}">{{org.supportEmail}}</a>, or the <a href="{{site.supportPath}}">support page</a>.</p>
+
+<div class="callout warn">
+  <p style="margin:0"><strong>For the people in your meetings.</strong> Recording a conversation is your responsibility, not ours: tell the other participants and get whatever consent your jurisdiction or workplace requires before you press record. {{app.name}} is for adults aged {{app.minimumAge}} and over.</p>
+</div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>{{org.name}} — {{org.postalAddress}}</span>
+    <a href="mailto:{{org.supportEmail}}">{{org.supportEmail}}</a>
+    <a href="{{site.policyPath}}">Privacy</a>
+    <a href="{{site.termsPath}}">Terms</a>
+    <a href="{{app.playUrl}}">Google Play</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — {{app.name}} | {{org.name}}</title>
+<meta name="description" content="What {{app.name}} collects, why it is collected, where it is processed, how long it is kept and how to delete it. Written against the shipped Android build.">
+<link rel="canonical" href="{{site.base}}{{site.policyPath}}">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="favicon.png">
+<meta name="robots" content="index,follow">
+</head>
+<body data-app-version="{{app.versionName}}+{{app.versionCode}}">
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">{{app.name}}<span class="dot">.</span></a>
+    <nav class="site">
+      <a href="index.html">Home</a>
+      <a href="{{site.policyPath}}" aria-current="page">Privacy</a>
+      <a href="{{site.termsPath}}">Terms</a>
+      <a href="{{site.supportPath}}">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<h1>Privacy Policy</h1>
+<p class="lede">{{app.name}} records meetings, transcribes them and turns them into minutes. This page says exactly what leaves your phone, where it goes, who can see it, how long it stays and how to make us delete it.</p>
+<p class="meta">
+  <span>Last updated: <strong>{{site.updated}}</strong></span>
+  <span>Applies to {{app.name}} {{app.versionName}} (build {{app.versionCode}}) for {{app.platform}}</span>
+  <span>Operator: {{org.name}}</span>
+</p>
+
+<div class="callout">
+  <h3 id="short-version" style="margin-top:0">The short version</h3>
+  <ul>
+    <li><strong>Offline transcription keeps your audio on your phone.</strong> Cloud transcription sends the audio to our servers and on to Google's Gemini API.</li>
+    <li><strong>No advertising SDKs, no analytics SDKs, no third-party trackers.</strong> This is measured against the shipped APK, not aspirational.</li>
+    <li><strong>We never sell your personal data and we do not show ads.</strong></li>
+    <li><strong>Location is optional.</strong> Declining location does not disable recording, transcription or playback.</li>
+    <li><strong>One action deletes everything.</strong> Profile → Delete account removes your recordings, transcripts, minutes and account, and the app will refuse to delete the account while any of your audio is still in our storage.</li>
+    <li><strong>You must be {{app.minimumAge}} or older</strong> to use the app, and you must have the authority to record the people in your meetings.</li>
+  </ul>
+</div>
+
+<h2 id="contents">Contents</h2>
+<div class="toc">
+<ol>
+  <li><a href="#who">Who operates this app</a></li>
+  <li><a href="#collect">What we collect</a></li>
+  <li><a href="#permissions">Permissions, and what each one is for</a></li>
+  <li><a href="#where">Where your data is stored and processed</a></li>
+  <li><a href="#ai">Transcription, AI summaries and Google Gemini</a></li>
+  <li><a href="#consent">Recording other people — your obligations</a></li>
+  <li><a href="#payments">Subscriptions and payments</a></li>
+  <li><a href="#retention">How long we keep things</a></li>
+  <li><a href="#deletion">Deleting your account and your data</a></li>
+  <li><a href="#security">How we protect your data</a></li>
+  <li><a href="#sharing">Who we share data with</a></li>
+  <li><a href="#rights">Your rights and complaints</a></li>
+  <li><a href="#age">Age restriction</a></li>
+  <li><a href="#changes">Changes to this policy</a></li>
+  <li><a href="#history">Policy version history</a></li>
+</ol>
+</div>
+
+<h2 id="who">1. Who operates this app</h2>
+<p>{{app.name}} is designed, published and operated by <strong>{{org.name}}</strong>, {{org.postalAddress}} (the operator, “we”, “us”). We are the <strong>data controller</strong> for the personal data described here: we decide what the app collects and what it is used for.</p>
+<p>Contact for anything in this policy, including privacy requests: <a href="mailto:{{org.privacyEmail}}">{{org.privacyEmail}}</a>. General help: <a href="mailto:{{org.supportEmail}}">{{org.supportEmail}}</a> or <a href="{{site.supportPath}}">{{site.supportPath}}</a>.</p>
+<p>Google is not the controller of your meeting content. Google provides sign-in, the Gemini API, and the Play Store; each has its own privacy notice, linked in <a href="#sharing">section 11</a>.</p>
+
+<h2 id="collect">2. What we collect</h2>
+<p>{{app.name}} has no ad or analytics SDKs, so the list below is the whole list. The categories are what the shipped build actually reads, writes or transmits.</p>
+
+<h3 id="account">2.1 Account — required to use the app</h3>
+<p>You sign in with Google. From Google we receive your Google account ID, name, email address and profile photo URL. We store the ID, name, email and photo URL, and nothing else from your Google account. We never see or store your Google password.</p>
+
+<h3 id="meetings">2.2 What you record — the actual content</h3>
+<table>
+  <caption>Content data. “On device” means in the app’s private storage on your phone.</caption>
+  <thead><tr><th>Data</th><th>Where it lives</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><th>Audio recordings</th><td>On your device. Parts are also uploaded to our servers when you use cloud transcription — see <a href="#ai">§5</a>.</td><td>Playback, re-transcription</td></tr>
+    <tr><th>Transcripts</th><td>On your device; on our servers when produced by cloud transcription</td><td>The product</td></tr>
+    <tr><th>Generated minutes: summary, key points, action items, participants, sentiment</th><td>Our servers</td><td>The product</td></tr>
+    <tr><th>Meeting metadata: title, description, date and time, duration in seconds, file size</th><td>On your device and on our servers</td><td>Listing, quota, playback</td></tr>
+  </tbody>
+</table>
+<p>Nothing records by itself. Recording starts when you press the microphone button, and the phone shows a microphone indicator while it is on.</p>
+
+<h3 id="usage">2.3 Service records</h3>
+<table>
+  <thead><tr><th>Data</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><th>Usage counters: meetings per period, audio minutes, model tokens, which transcription mode was used, which model served the request</th><td>To enforce the plan you are on and to stop one account exhausting a shared AI service</td></tr>
+    <tr><th>Device authorisations: a device identifier, a label, first and last seen</th><td>Limits on how many devices one account may use; shown to you in the app so you can sign others out</td></tr>
+  </tbody>
+</table>
+
+<h3 id="sessions">2.4 Sign-in and security records</h3>
+<p>When you sign in we record a session row containing the IP address, the user agent string, a device description, and — if you granted location permission — the geographic coordinates captured at sign-in (see <a href="#permissions">§3</a>).</p>
+<p>We store a one-way digest of the session token, never the token itself. The digest lets us answer “was this session real” without our database doubling as a store of live credentials.</p>
+
+<h3 id="payments-collected">2.5 Purchase records</h3>
+<p>Subscription tier, Google Play product id, the Play purchase token, billing interval and expiry. Play, not us, holds your card or payment instrument; we never receive it.</p>
+
+<h3 id="support">2.6 What you send us when you ask for help</h3>
+<p>Whatever you write to us by email — which may include screenshots, meeting titles or logs, at your choice. We ask you not to send full transcripts of other people’s meetings unless they are needed to fix a bug.</p>
+
+<h3 id="notcollected">2.7 What we do not collect</h3>
+<ul>
+  <li>No advertising identifiers, no ad SDK, no ad network.</li>
+  <li>No analytics or crash-reporting SDK, no session replay, no fingerprinting, no cross-app tracking.</li>
+  <li>No contacts, call log, SMS, camera, calendar or file browsing access.</li>
+  <li>No background recording, no keystroke logging, no screen capture beyond the microphone you start.</li>
+  <li>No data about people who do not use the app, other than what appears inside audio you choose to record.</li>
+</ul>
+
+<h2 id="permissions">3. Permissions, and what each one is for</h2>
+<p>This is the permission set declared by the shipped build, verified against the release APK rather than copied from a store listing.</p>
+<table>
+  <thead><tr><th>Permission</th><th>Used for</th><th>Required?</th></tr></thead>
+  <tbody>
+    <tr><th>Microphone</th><td>Recording meetings. The only way audio is captured.</td><td class="req">For recording</td></tr>
+    <tr><th>Notifications</th><td>Showing the “recording in progress” notification required by Android for a microphone service.</td><td class="req">For recording</td></tr>
+    <tr><th>Location (precise and approximate, foreground only)</th><td>Stamped on the sign-in session record in §2.4. The app has no map feature and never looks at location while recording.</td><td class="opt">Optional — decline it and the app works</td></tr>
+    <tr><th>Bluetooth / Bluetooth device connection</th><td>Allowing a paired headset or car kit to be the recording input on Android versions that require this permission to see paired devices.</td><td class="opt">Optional</td></tr>
+    <tr><th>Network access, network state</th><td>Sign-in, transcription, playback of your recordings on another device.</td><td class="req">For online features</td></tr>
+    <tr><th>Run a foreground service, keep awake during recording</th><td>Keeping a long recording alive when the screen turns off.</td><td class="req">For recording</td></tr>
+    <tr><th>Play Billing (<code>com.android.vending.BILLING</code>)</th><td>Purchasing subscriptions through Google Play.</td><td class="opt">Only for purchases</td></tr>
+  </tbody>
+</table>
+<p>Every runtime permission can be declined. Location and Bluetooth can be turned off after granting without breaking recording, transcription, or playback.</p>
+
+<h2 id="where">4. Where your data is stored and processed</h2>
+<table>
+  <thead><tr><th>What</th><th>Where</th></tr></thead>
+  <tbody>
+    <tr><th>Recordings, transcripts, minutes, account data</th><td>{{backend.host}} (project <code>{{backend.projectRef}}</code>, region {{backend.region}}) — managed Postgres, Storage and authentication.</td></tr>
+    <tr><th>Audio and minutes while a cloud transcription runs</th><td>In memory in our <code>gemini-proxy</code> service for the duration of that request.</td></tr>
+    <tr><th>Google sign-in identity</th><td>Google, under Google’s terms.</td></tr>
+    <tr><th>Transcription and summarisation AI</th><td>Google Gemini API, under Google’s terms.</td></tr>
+    <tr><th>Subscriptions and payment</th><td>Google Play, under Google’s terms.</td></tr>
+    <tr><th>Offline transcription models</th><td>Downloaded to your device and run entirely on it.</td></tr>
+  </tbody>
+</table>
+<p>Within our own platform, every table and every storage bucket is row-level-security scoped to your account: another user’s query for your meetings returns nothing. The Gemini API key exists only inside our server function; it is not in the app, so a modified copy of the app cannot use our AI access without an account.</p>
+
+<h2 id="ai">5. Transcription, AI summaries and Google Gemini</h2>
+<p>{{app.name}} offers two ways to turn speech into text.</p>
+
+<h3>5.1 Offline (on your device)</h3>
+<p>You download a Whisper speech model (tiny or base) once. It runs on your phone. <strong>In this mode the audio is not uploaded for transcription.</strong> Each model file is checked against a published SHA-256 digest before use, so a tampered download is rejected rather than installed.</p>
+
+<h3>5.2 Cloud (Google Gemini)</h3>
+<p>In cloud mode, the audio for that meeting is sent from your phone to our own service, and our service passes it to the Google Gemini API for transcription, then sends the transcript back through Gemini to produce the minutes. Recordings up to 12 MB per part travel in the request itself. Larger recordings are placed in our private storage bucket and our service pulls them back by a short-lived signed URL (10 minutes) to send to Gemini; <strong>those stored parts stay in our storage until you delete the meeting’s data or your account</strong> (§9).</p>
+<p>Models used: the Gemini 2.5 <em>flash</em> family. We do not use your audio or text to train any model ourselves, and we do not build a corpus of customer meetings.</p>
+<p>Google processes that audio and text under its own Gemini API terms, including its own retention of API traffic. We do not control Google’s retention settings, so the honest statement is: <strong>anything you transcribe in cloud mode is visible to Google’s processing systems, and Google’s terms govern what happens to it there.</strong> If that is not acceptable for a given meeting, use offline mode.</p>
+
+<h3>5.3 Guard rails on the AI path</h3>
+<ul>
+  <li>Request size limits, so one caller cannot make our service hold an arbitrarily large blob in memory.</li>
+  <li>Our service refuses to fetch any URL we did not issue, which closes the “make the server fetch an internal address” door.</li>
+  <li>Allowances are enforced server-side against the audio actually received, not against what the app reported.</li>
+  <li>Sign-in is required for every AI call; anonymous use is not possible.</li>
+</ul>
+
+<h2 id="consent">6. Recording other people — your obligations</h2>
+<p>You, not we, are responsible for recording lawfully. Before you record a meeting you are responsible for telling the other participants and, where your jurisdiction requires it, getting their consent. Laws differ: some places allow single-party consent, some require everyone’s consent, and workplace rules may add more.</p>
+<p>You must not use {{app.name}} to record conversations you are not a genuine participant in, to record confidential proceedings, or in any way that breaks the law or a duty you owe to another person. Deliberate misuse is a breach of our <a href="{{site.termsPath}}">terms</a> and grounds for suspending the account.</p>
+<p>We process meeting content only on your instruction and only to produce the recording, transcript and minutes for you. If you receive a request from someone recorded in one of your meetings, delete that meeting in the app and contact us if it was cloud-transcribed.</p>
+
+<h2 id="payments">7. Subscriptions and payments</h2>
+<p>Paid plans are sold as Google Play subscriptions (monthly and annual), managed entirely by Google Play: purchase, receipt, tax invoice, renewal, cancellation and refund. Records kept by us are the entitlement and the Play purchase token used to confirm it (<a href="#payments-collected">§2.5</a>). Cancelling a subscription does not delete your data; you stay on the free tier with your meetings intact. Delete your account to delete your data.</p>
+
+<h2 id="retention">8. How long we keep things</h2>
+<table>
+  <caption>No rule here expires automatically while your account is open: your data stays until you delete it, because a meeting app that silently deletes a user’s recordings is worse than one that keeps them.</caption>
+  <thead><tr><th>Data</th><th>Kept until</th></tr></thead>
+  <tbody>
+    <tr><th>Recordings and transcripts on your device</th><td>You delete the meeting, uninstall, or delete your account</td></tr>
+    <tr><th>Audio parts held in our storage for cloud transcription</th><td>You delete the meeting’s server-side data or your account (§9)</td></tr>
+    <tr><th>Minutes and meeting metadata</th><td>You delete the meeting or your account</td></tr>
+    <tr><th>Usage counters and session records</th><td>Account deletion</td></tr>
+    <tr><th>Entitlement and purchase records</th><td>Account deletion; Google Play keeps its own purchase records for its own purposes (tax, fraud, chargebacks)</td></tr>
+    <tr><th>Google Gemini API traffic</th><td>Per Google’s Gemini API terms, not ours</td></tr>
+    <tr><th>Backups of our database and storage</th><td>Rotated backup retention of our hosting provider; deleted data stops being served immediately and drops out of backups on rotation</td></tr>
+    <tr><th>Email you send us</th><td>Until you ask us to delete it, if it still exists</td></tr>
+  </tbody>
+</table>
+
+<h2 id="deletion">9. Deleting your account and your data</h2>
+<p><strong>In one place:</strong> open the app, go to Profile → <em>Delete account</em>, and confirm. This is available in the current released build; you do not need to email us, though you can ask us to delete an account by email from the address on the account.</p>
+<p>What happens, in this order:</p>
+<ol>
+  <li>Your audio is removed from our storage bucket.</li>
+  <li>Your sessions, usage counters, device authorisations, entitlement and purchase events, minutes and meeting rows are deleted.</li>
+  <li>Your profile and the account itself are deleted.</li>
+</ol>
+<p>The order is enforced by the server on purpose: the deletion of your account <em>refuses to run</em> while your audio is still sitting in our storage. “Your account is gone” can never mean “your audio is orphaned in a bucket”.</p>
+<p>Effect: you are signed out, you lose access to your meetings on every device, and the deletion is immediate. Backups rotate out afterwards (§8). If you only want a single meeting gone, delete that meeting in the app and, if it had been cloud-transcribed, tell us via <a href="mailto:{{org.privacyEmail}}">{{org.privacyEmail}}</a> so we can clear the server-side parts.</p>
+<p>To stop billing, cancel in Google Play (Play Store → Subscriptions). Deleting your account does not cancel a subscription that Play is still billing.</p>
+
+<h2 id="security">10. How we protect your data</h2>
+<ul>
+  <li>TLS on every request; the app talks to our services and to Google only over HTTPS.</li>
+  <li>Row-level security on every table and every storage path: your rows are reachable only by you.</li>
+  <li>The recordings bucket is private. Access is by short-lived signed URL, issued to the account that owns the object.</li>
+  <li>The Gemini API key lives only in our server environment, never in the app.</li>
+  <li>Session tokens are held on your device in the OS-protected keystore-backed store, and only their digest is stored by us.</li>
+  <li>Function permissions are scoped: anonymous keys cannot execute the functions that act on a named user.</li>
+  <li>Downloaded AI models are verified against a SHA-256 digest before they are installed.</li>
+  <li>Release builds do not log personal data such as coordinates or meeting content.</li>
+</ul>
+<p>No system is unbreakable. If we ever have to tell you about a breach affecting your data, we will notify you and, where required, the relevant authority, as soon as we reasonably can.</p>
+
+<h2 id="sharing">11. Who we share data with</h2>
+<table>
+  <thead><tr><th>Recipient</th><th>What they get</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><th>Supabase</th><td>Account data, meetings, minutes, recordings, usage and session records</td><td>Managed database, storage and authentication (our hosting provider, contracted to us)</td></tr>
+    <tr><th>Google (Gemini API)</th><td>Audio and text for cloud transcription and summarisation</td><td>Speech-to-text and AI minutes</td></tr>
+    <tr><th>Google (Sign-In)</th><td>Your Google account credentials at sign-in; we receive ID, name, email, photo URL</td><td>Authentication</td></tr>
+    <tr><th>Google Play</th><td>Purchase tokens and entitlement checks; app version and device info Play itself collects</td><td>Billing, updates, anti-fraud</td></tr>
+    <tr><th>Legal / authorities</th><td>Only what a valid legal demand requires</td><td>Compliance with law; we evaluate demands and disclose the minimum</td></tr>
+  </tbody>
+</table>
+<p>We do not sell, rent, or trade personal data, and we do not share it for advertising.</p>
+
+<h2 id="rights">12. Your rights and complaints</h2>
+<p>Depending on where you live you may have rights to access, correct, export, restrict, or object to processing, and to erase your data. {{app.name}} is built so that most of this is self-service: the app shows your meetings, your profile, your sessions and devices, and one action deletes all of it.</p>
+<ul>
+  <li><strong>Copy of your data:</strong> the app itself (export/share a meeting), or ask us and we will provide what we hold for your account in a machine-readable form.</li>
+  <li><strong>Correction:</strong> edit the meeting title and description in the app; profile fields come from your Google account.</li>
+  <li><strong>Deletion:</strong> §9, in the app.</li>
+  <li><strong>Anything else:</strong> <a href="mailto:{{org.privacyEmail}}">{{org.privacyEmail}}</a>, from the email address on the account so we can know whose request it is. We answer within 30 days, and usually much sooner.</li>
+</ul>
+<p>Applicable frameworks we intend to satisfy: India’s Digital Personal Data Protection Act 2023, and, where they apply to you, the EU/UK GDPR and the California CCPA. If you are in the EEA/UK and think we have mishandled your data, you may also complain to your supervisory authority; in India, to the Data Protection Board of India.</p>
+
+<h2 id="age">13. Age restriction</h2>
+<p>{{app.name}} is a business tool for adults. It is <strong>not intended for, designed for, or available to anyone under {{app.minimumAge}} years of age</strong>. We do not knowingly collect personal data from anyone under {{app.minimumAge}}. If we learn that a person under {{app.minimumAge}} has created an account, we delete the account and its data. If you believe that has happened, tell us at <a href="mailto:{{org.privacyEmail}}">{{org.privacyEmail}}</a>.</p>
+
+<h2 id="changes">14. Changes to this policy</h2>
+<p>This page is the record. If what we collect, who processes it, or how long we keep it changes, this page changes first and its <em>Last updated</em> date and <a href="#history">version history</a> move with it — before the app version that relies on the change is released. Material changes will also be announced inside the app on next launch. Continued use of the app after a change means you accept it; if you do not accept it, delete your account and we will delete your data.</p>
+<p>The Google Play store listing points at this exact URL. If you are reading a copy that is not at <code>{{site.base}}{{site.policyPath}}</code>, the copy is not the current one.</p>
+
+<h2 id="history">15. Policy version history</h2>
+<table>
+  <thead><tr><th>Version</th><th>Date</th><th>Applies to app</th><th>What changed</th></tr></thead>
+  <tbody>
+    <tr>
+      <th>v1.0</th>
+      <td>{{site.updated}}</td>
+      <td>{{app.versionName}} (build {{app.versionCode}}) and later</td>
+      <td>First published policy, written against the shipped build rather than a template. Recorded the on-device transcription option, the Google Gemini cloud path and its storage of large audio parts, the 21+ age restriction, the storage of a session-token digest rather than a token, and the account deletion order enforced server-side. Supersedes the unpublished draft that described “usage analytics”, an “encrypted at rest” guarantee, and contact addresses that were never ours.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+<p class="meta">
+  <span>Operator: {{org.name}}, {{org.postalAddress}}</span>
+  <span>Contact: <a href="mailto:{{org.privacyEmail}}">{{org.privacyEmail}}</a></span>
+  <span>App package: <code>{{app.package}}</code></span>
+</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>{{org.name}}</span>
+    <a href="{{site.policyPath}}">Privacy</a>
+    <a href="{{site.termsPath}}">Terms</a>
+    <a href="{{site.supportPath}}">Support</a>
+    <a href="{{app.playUrl}}">Google Play</a>
+  </div>
+</footer>
+</body>
+</html>
