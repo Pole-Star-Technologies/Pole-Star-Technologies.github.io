@@ -8,7 +8,6 @@ points at, so they are treated as a release artefact, not as a scratch pad.
 src/                    the source of every page (with {{tokens}} in it)
 site.config.json        every fact the pages state about the operator and the app
 build.mjs               strict template -> dist/ ; refuses to write on any error
-PLAYSTORE_DATA_SAFETY.md  the Play Console Data safety form, answered from evidence
 dist/                   generated, git-ignored, uploaded to Pages by CI
 .github/workflows/      build + deploy to GitHub Pages
 ```
@@ -50,6 +49,7 @@ somewhere else is a page Google will quietly not rank.
   still contains `TODO`, if any `{{token}}` is unresolved, if an internal link
   points at a page that does not exist, or if a canonical URL disagrees with
   `site.base`.
+* **Nothing internal belongs here.** This repo is public. Internal table names, RPC names, storage bucket names, keystore or signing detail, and security findings stay in the app repo; only sentences meant for a user get published.
 * **Claims are reproducible.** The factual claims in the policy come from the
   commands in the next section, run against the real build and the live project
   — not from an earlier draft of this file.
@@ -66,7 +66,7 @@ Run these and the policy can be checked line by line.
 | Session token stored as a digest (§2.4) | `supabase/migrations/17_function_grants_and_account_deletion.sql` §1 |
 | Deletion order, and that it refuses while audio remains (§9) | same migration, `delete_my_account()` |
 | Recordings bucket is private (§4, §10) | `select id, public from storage.buckets` |
-| Region (§4) | `supabase projects list` → `ap-northeast-2` |
+| Region (§4) | `supabase projects list` |
 | Cloud transcription used `direct`/`storage`, models used (§5) | `select strategy, provider, count(*) from usage_events group by 1,2`; `supabase/functions/gemini-proxy/prompts.ts` (`MODELS`) |
 | Offline Whisper models (§5.1) | `select model_key, engine from transcription_models` |
 | The build these claims describe | `tools/verify_signing.sh build/app/outputs/bundle/release/app-release.aab` → `PASS`, cert `CN=MeetingAI` |
@@ -80,7 +80,7 @@ Run these and the policy can be checked line by line.
 | Terms | `{{site.termsPath}}` (not required by Play, linked from the app's Profile screen) |
 | Target audience | 18+ in the Console (Play has no 21+ category); **our own terms require 21+** and the policy says so |
 | Ads | None. No ads SDK in the build |
-| Data safety | see `PLAYSTORE_DATA_SAFETY.md` |
+| Data safety | answered in the app repo (private): `playstore-release/DATA_SAFETY_ANSWERS.md` — it names tables, RPCs and open findings, so it does not live here |
 
 ## Local preview
 

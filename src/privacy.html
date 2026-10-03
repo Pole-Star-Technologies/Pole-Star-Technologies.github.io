@@ -139,7 +139,7 @@
 <table>
   <thead><tr><th>What</th><th>Where</th></tr></thead>
   <tbody>
-    <tr><th>Recordings, transcripts, minutes, account data</th><td>{{backend.host}} (project <code>{{backend.projectRef}}</code>, region {{backend.region}}) — managed Postgres, Storage and authentication.</td></tr>
+    <tr><th>Recordings, transcripts, minutes, account data</th><td>{{backend.host}} — managed Postgres, Storage and authentication, in {{backend.region}}.</td></tr>
     <tr><th>Audio and minutes while a cloud transcription runs</th><td>In memory in our <code>gemini-proxy</code> service for the duration of that request.</td></tr>
     <tr><th>Google sign-in identity</th><td>Google, under Google’s terms.</td></tr>
     <tr><th>Transcription and summarisation AI</th><td>Google Gemini API, under Google’s terms.</td></tr>

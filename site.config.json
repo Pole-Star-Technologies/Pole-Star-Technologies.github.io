@@ -27,8 +27,6 @@
 
   "backend": {
     "host": "Supabase",
-    "projectName": "meting-assistant",
-    "projectRef": "gjmnkzzwacnqiwrslzqb",
     "region": "ap-northeast-2 (Seoul, South Korea)"
   }
 }
