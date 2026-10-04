@@ -4,6 +4,12 @@ name: Deploy public site
 # build refuses to write dist/ while a config value is TODO or a {{token}} is
 # unresolved, so a half-filled policy page cannot reach the URL the Play
 # Console points at.
+#
+# This is the organisation's ROOT Pages site:
+#   https://pole-star-technologies.github.io/privacy.html
+# That URL comes from the repo *name*: only a repo called `<owner>.github.io`
+# is served at an owner's root. Rename this repo and the three URLs handed to
+# Google go dead.
 
 on:
   push:

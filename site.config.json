@@ -18,7 +18,7 @@
   },
 
   "site": {
-    "base": "https://pole-star-technologies.github.io/meetingai-site",
+    "base": "https://pole-star-technologies.github.io",
     "updated": "2026-10-04",
     "policyPath": "/privacy.html",
     "supportPath": "/support.html",
