@@ -158,6 +158,26 @@ footer.site {
 
 footer.site .wrap { display: flex; flex-wrap: wrap; gap: .35rem 1.5rem; }
 
+/* The store call to action. `.cta--pending` is what shows while the listing is
+   not live: same weight as the button it replaces, so the page does not look
+   broken, but it is text and not a link to a 404. */
+.cta {
+  display: inline-block;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: .55rem 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cta--pending {
+  border-style: dashed;
+  border-color: var(--line);
+  color: var(--fg-muted);
+  font-weight: 500;
+  font-size: .93rem;
+}
+
 .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin: 1.3rem 0; }
 
 .card {

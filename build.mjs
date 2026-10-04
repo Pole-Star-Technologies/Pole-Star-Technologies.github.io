@@ -70,11 +70,43 @@ const FLAT = new Map();
   }
 })(config);
 
+// ------------------------------------------------------- the store link ---
+// A details?id=… URL for an app that is not published yet resolves to a 404, and
+// on the page a Play reviewer is reading that reads as a broken site. So the
+// store link is not a config value a page uses directly: it is computed from
+// app.playUrl and app.listingLive, and until the listing is live the pages say
+// so in words instead of pointing at a page that does not exist.
+//
+// Publishing the listing is then one config value (`listingLive`: "yes"), and
+// every page picks the link up at once.
+const LISTING_VALUES = ["yes", "no"];
+function storeLinks(app) {
+  const live = String(app.listingLive ?? "").trim().toLowerCase();
+  if (!LISTING_VALUES.includes(live)) {
+    errors.push(`config value app.listingLive must be "yes" or "no", not "${app.listingLive}"`);
+  }
+  const url = String(app.playUrl || "").trim();
+  const name = String(app.name || "the app").trim();
+  if (live !== "yes" || !url) {
+    return {
+      button: `<span class="cta cta--pending" role="note">Not on Google Play yet — ${name} is in Google’s review. The store listing opens with this release.</span>`,
+      link: `<span role="note">Google Play (listing not live yet)</span>`,
+    };
+  }
+  return {
+    button: `<a class="cta" href="${url}"><strong>${name} on Google Play →</strong></a>`,
+    link: `<a href="${url}">Google Play</a>`,
+  };
+}
+const store = storeLinks(config.app);
+
 // Computed tokens, so pages never hardcode a date they forget to bump.
 const now = new Date();
 FLAT.set("generated.date", now.toISOString().slice(0, 10));
 FLAT.set("generated.iso", now.toISOString());
 FLAT.set("generated.year", String(now.getUTCFullYear()));
+FLAT.set("store.button", store.button);
+FLAT.set("store.link", store.link);
 
 // --------------------------------------------------------------- tokens ---
 function substitute(html, file) {

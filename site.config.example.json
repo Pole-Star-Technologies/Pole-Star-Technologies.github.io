@@ -14,6 +14,8 @@
     "name": "MeetingAI",
     "package": "com.meetingAIv1",
     "playUrl": "https://play.google.com/store/apps/details?id=com.meetingAIv1",
+    "listingLive": "no",
+    "$listingLive": "yes only once the Play listing is publicly reachable. While it is no, the pages say 'not on Google Play yet' instead of linking at a details?id= URL that answers 404.",
     "versionName": "1.3.0",
     "versionCode": "14",
     "platform": "Android (min 8.0 / API 26, target Android 16 / API 36)"
