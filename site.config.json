@@ -18,7 +18,7 @@
   },
 
   "site": {
-    "base": "TODO - the URL this site is served from, no trailing slash, e.g. https://polestar-tech.github.io/meetingai-site",
+    "base": "https://pole-star-technologies.github.io/meetingai-site",
     "updated": "2026-10-04",
     "policyPath": "/privacy.html",
     "supportPath": "/support.html",
